@@ -41,7 +41,7 @@ test("4/1 + 5/0 should return null", () => {
   expect(addition).toBe(null);
 });
 
-test("1/2 + 1/2 equal to 4/4", () => {
+test("1/2 + 1/2 equal to 2/2", () => {
   const firstFraction = new Fraction(1, 2);
   const secondFraction = new Fraction(1, 2);
   const addition = firstFraction.add(secondFraction);
