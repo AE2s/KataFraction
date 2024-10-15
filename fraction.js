@@ -1,8 +1,11 @@
 export default class Fraction {
-  constructor(a, b) {
-    this.a = a;
-    this.b = b;
+  constructor(nominator, denominator) {
+    this.nominator = nominator;
+    this.denominator = denominator;
   }
 
-  add = (element) => this.a + element.a;
+  add = (fraction) => {
+    if (this.denominator === 0) return null;
+    return this.nominator + fraction.nominator;
+  };
 }
