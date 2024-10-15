@@ -41,11 +41,20 @@ test("4/1 + 5/0 should return null", () => {
   expect(addition).toBe(null);
 });
 
-test("1/2 + 1/2 equal to 2/2", () => {
+test("1/2 + 1/2 equal to 4/4", () => {
   const firstFraction = new Fraction(1, 2);
   const secondFraction = new Fraction(1, 2);
   const addition = firstFraction.add(secondFraction);
-  const expected = new Fraction(2, 2);
+  const expected = new Fraction(4, 2);
   expect(addition.nominator).toBe(expected.nominator);
   expect(addition.denominator).toBe(expected.denominator);
 });
+
+test("1/3 + 1/2 equal to 5/6", () => {
+    const firstFraction = new Fraction(1, 3);
+    const secondFraction = new Fraction(1, 2);
+    const addition = firstFraction.add(secondFraction);
+    const expected = new Fraction(5, 6);
+    expect(addition.nominator).toBe(expected.nominator);
+    expect(addition.denominator).toBe(expected.denominator);
+  });

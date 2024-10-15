@@ -6,6 +6,8 @@ export default class Fraction {
 
   add = (fraction) => {
     if (this.denominator === 0 || fraction.denominator === 0) return null;
-    return new Fraction(this.nominator + fraction.nominator, this.denominator);
+    const nominator = this.nominator * fraction.denominator + fraction.nominator * this.denominator;
+    const denominator = this.denominator === fraction.denominator ? this.denominator : this.denominator * fraction.denominator;
+    return new Fraction(nominator, denominator);
   };
 }
