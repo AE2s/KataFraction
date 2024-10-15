@@ -28,8 +28,15 @@ test("2/1 + 4/1 equal to 6", () => {
 });
 
 test("5/0 + 4/1 should return null", () => {
+  const firstFraction = new Fraction(5, 0);
+  const secondFraction = new Fraction(4, 1);
+  const addition = firstFraction.add(secondFraction);
+  expect(addition).toBe(null);
+});
+
+test("4/1 + 5/0 should return null", () => {
     const firstFraction = new Fraction(5, 0);
     const secondFraction = new Fraction(4, 1);
-    const addition = firstFraction.add(secondFraction);
+    const addition = secondFraction.add(firstFraction);
     expect(addition).toBe(null);
   });

@@ -5,7 +5,7 @@ export default class Fraction {
   }
 
   add = (fraction) => {
-    if (this.denominator === 0) return null;
+    if (this.denominator === 0 || fraction.denominator === 0) return null;
     return this.nominator + fraction.nominator;
   };
 }
