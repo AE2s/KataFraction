@@ -1,0 +1,15 @@
+{
+  "name": "Test",
+  "version": "1.0.0",
+  "description": "a simple test project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "ESSAGHIR Anas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
