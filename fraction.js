@@ -14,7 +14,7 @@ export default class Fraction {
       case OPERATION.ADDITION:
         nominator = this.nominator * fraction.denominator + fraction.nominator * this.denominator;
         break;
-      case OPERATION.SOUSTRACTION:
+      case OPERATION.MINUS:
         nominator = this.nominator * fraction.denominator - fraction.nominator * this.denominator;
         break;
     }
@@ -24,19 +24,11 @@ export default class Fraction {
   };
 
   add = (fraction) => {
-    if (this.denominator === 0 || fraction.denominator === 0) return null;
-    const nominator = this.nominator * fraction.denominator + fraction.nominator * this.denominator;
-    const denominator = this.denominator * fraction.denominator;
-    const result = new Fraction(nominator, denominator);
-    return result.simplify().toString();
+    return this.calculate(fraction, OPERATION.ADDITION);
   };
 
   minus = (fraction) => {
-    if (this.denominator === 0 || fraction.denominator === 0) return null;
-    const nominator = this.nominator * fraction.denominator - fraction.nominator * this.denominator;
-    const denominator = this.denominator * fraction.denominator;
-    const result = new Fraction(nominator, denominator);
-    return result.simplify().toString();
+    return this.calculate(fraction, OPERATION.MINUS);
   };
 
   simplify = () => {

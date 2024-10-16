@@ -1,6 +1,6 @@
 const OPERATION = {
   ADDITION: "+",
-  SOUSTRACTION: "-",
+  MINUS: "-",
 };
 
 export default OPERATION;
