@@ -101,4 +101,12 @@ describe("Soustraction", () => {
     const addition = firstFraction.minus(secondFraction);
     expect(addition).toBe(null);
   });
+
+  test("3/6 + 6/18 equal to 1/6", () => {
+    const firstFraction = new Fraction(3, 6);
+    const secondFraction = new Fraction(6, 18);
+    const addition = firstFraction.minus(secondFraction);
+    const expected = "1/6";
+    expect(addition).toBe(expected);
+  });
 });
