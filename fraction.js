@@ -1,9 +1,27 @@
 import pgcd from "./pgcd";
+import OPERATION from "./enums";
 export default class Fraction {
   constructor(nominator, denominator) {
     this.nominator = nominator;
     this.denominator = denominator;
   }
+
+  calculate = (fraction, operation) => {
+    if (this.denominator === 0 || fraction.denominator === 0) return null;
+    const denominator = this.denominator * fraction.denominator;
+    let nominator;
+    switch (operation) {
+      case OPERATION.ADDITION:
+        nominator = this.nominator * fraction.denominator + fraction.nominator * this.denominator;
+        break;
+      case OPERATION.SOUSTRACTION:
+        nominator = this.nominator * fraction.denominator - fraction.nominator * this.denominator;
+        break;
+    }
+
+    const result = new Fraction(nominator, denominator);
+    return result.simplify().toString();
+  };
 
   add = (fraction) => {
     if (this.denominator === 0 || fraction.denominator === 0) return null;

@@ -1,9 +1,10 @@
 import Fraction from "./fraction";
+import OPERATION from "./enums";
 
 describe("Addition", () => {
   test("0 + 0 equal to 0", () => {
     const fractionZero = new Fraction(0, 1);
-    const addition = fractionZero.add(fractionZero);
+    const addition = fractionZero.calculate(fractionZero, OPERATION.ADDITION);
     expect(addition).toBe("0");
   });
 
