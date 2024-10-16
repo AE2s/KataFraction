@@ -15,7 +15,13 @@ export default class Fraction {
   add = (fraction) => {
     if (this.denominator === 0 || fraction.denominator === 0) return null;
     const nominator = this.nominator * fraction.denominator + fraction.nominator * this.denominator;
-    const denominator = (this.denominator * fraction.denominator) / this.pgcd(this.denominator, fraction.denominator);
-    return new Fraction(nominator, denominator);
+    const denominator = (this.denominator * fraction.denominator);
+    var result = new Fraction(nominator, denominator);
+    return result.simplify();
+  };
+
+  simplify = () => {
+    const pgcd = this.pgcd(this.nominator, this.denominator);
+    return new Fraction(this.nominator / pgcd, this.denominator / pgcd);
   };
 }
